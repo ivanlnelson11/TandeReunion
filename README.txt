@@ -1,10 +1,11 @@
-Tande Family Reunion 2027 Website
+Tande Family Reunion 2027 Single-Page Website
 
 Files:
-- index.html              Main flyer-inspired homepage
-- schedule.html           Full professionally designed reunion schedule
+- index.html
 - tande-family-reunion-flyer.png
 - README.txt
 
-GitHub Pages:
-Upload all files to the root of your repository. Keep the filenames unchanged.
+The reunion schedule is included directly on the homepage.
+
+For GitHub Pages:
+Upload all files to the root of the repository and keep the filenames unchanged.
