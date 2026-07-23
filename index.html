@@ -1,794 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tande Family Reunion 2027 — July 22–25, 2027 in Park City, Utah." />
-  <title>Tande Family Reunion 2027</title>
-
-  <style>
-    :root{
-      --navy:#0e2f50;
-      --red:#ae2430;
-      --cream:#f5ead2;
-      --gold:#d7b36a;
-      --ink:#173552;
-      --paper:#efe3c8;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,.55), transparent 32%),
-        linear-gradient(rgba(245,234,210,.96),rgba(245,234,210,.96)),
-        url("tande-family-reunion-flyer.png") center/cover fixed;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.18;
-      background-image:
-        repeating-linear-gradient(0deg, rgba(23,53,82,.04) 0 1px, transparent 1px 4px);
-      mix-blend-mode:multiply;
-    }
-
-    .page{
-      width:min(1120px,100%);
-      margin:0 auto;
-      background:var(--cream);
-      box-shadow:0 24px 70px rgba(14,47,80,.25);
-      border-left:3px solid var(--navy);
-      border-right:3px solid var(--navy);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .top-ornament{
-      padding:18px 24px 8px;
-      display:flex;
-      align-items:center;
-      gap:18px;
-      justify-content:center;
-      color:var(--navy);
-    }
-
-    .top-ornament::before,
-    .top-ornament::after{
-      content:"";
-      height:2px;
-      flex:1;
-      max-width:300px;
-      background:var(--navy);
-      box-shadow:0 7px 0 -1px rgba(14,47,80,.35);
-    }
-
-    .flag{
-      font-size:48px;
-      filter:drop-shadow(0 2px 0 rgba(0,0,0,.08));
-    }
-
-    .masthead{
-      text-align:center;
-      padding:0 24px 26px;
-      position:relative;
-    }
-
-    .masthead h1{
-      margin:0;
-      color:var(--navy);
-      font-size:clamp(4rem,12vw,9rem);
-      line-height:.85;
-      letter-spacing:.055em;
-      text-transform:uppercase;
-      text-shadow:0 2px 0 rgba(255,255,255,.65);
-    }
-
-    .masthead .script{
-      margin:-2px 0 0;
-      color:var(--red);
-      font-family:"Brush Script MT","Segoe Script",cursive;
-      font-size:clamp(2.7rem,7vw,6rem);
-      line-height:1;
-      font-weight:400;
-    }
-
-    .masthead .year{
-      margin:10px 0 0;
-      color:var(--navy);
-      font-size:clamp(3rem,8vw,6rem);
-      letter-spacing:.12em;
-      font-weight:700;
-    }
-
-    .mountain-hero{
-      min-height:620px;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      text-align:center;
-      padding:58px 24px 28px;
-      color:var(--navy);
-      background:
-        linear-gradient(to bottom, rgba(255,255,255,.12) 0 54%, rgba(245,234,210,.08) 72%, var(--cream) 100%),
-        url("tande-family-reunion-flyer.png") center 31%/cover no-repeat;
-      border-top:1px solid rgba(14,47,80,.18);
-      border-bottom:1px solid rgba(14,47,80,.18);
-      position:relative;
-    }
-
-    .date-block{
-      background:rgba(245,234,210,.86);
-      backdrop-filter:blur(2px);
-      padding:16px 28px 18px;
-      border-radius:18px;
-      box-shadow:0 10px 30px rgba(14,47,80,.14);
-    }
-
-    .date-block .date{
-      font-size:clamp(1.65rem,4vw,2.75rem);
-      font-weight:800;
-      letter-spacing:.03em;
-    }
-
-    .date-block .place{
-      color:var(--red);
-      font-family:"Brush Script MT","Segoe Script",cursive;
-      font-size:clamp(2.3rem,5vw,4rem);
-      line-height:1;
-      margin-top:6px;
-    }
-
-    .banner{
-      margin:-18px 38px 0;
-      position:relative;
-      z-index:3;
-      background:var(--navy);
-      color:var(--cream);
-      border-radius:8px 8px 18px 18px;
-      padding:22px 28px 18px 180px;
-      min-height:150px;
-      box-shadow:0 12px 30px rgba(14,47,80,.24);
-    }
-
-    .banner::before,
-    .banner::after{
-      content:"";
-      position:absolute;
-      top:0;
-      bottom:0;
-      width:54px;
-      background:var(--navy);
-    }
-
-    .banner::before{
-      left:-28px;
-      clip-path:polygon(0 0,100% 0,100% 100%,0 84%,18% 50%);
-    }
-
-    .banner::after{
-      right:-28px;
-      clip-path:polygon(0 0,100% 16%,82% 50%,100% 100%,0 100%);
-    }
-
-    .tree-mark{
-      position:absolute;
-      left:34px;
-      top:15px;
-      font-size:105px;
-      line-height:1;
-      color:var(--gold);
-      filter:drop-shadow(0 2px 0 rgba(0,0,0,.12));
-    }
-
-    .banner h2{
-      margin:0;
-      font-size:clamp(1.8rem,4vw,3rem);
-      letter-spacing:.04em;
-      text-transform:uppercase;
-    }
-
-    .banner p{
-      margin:4px 0 0;
-      font-size:clamp(1.1rem,2.2vw,1.55rem);
-      font-style:italic;
-      line-height:1.3;
-    }
-
-    .banner .gold{
-      color:var(--gold);
-      font-weight:700;
-    }
-
-    .info{
-      display:grid;
-      grid-template-columns:1fr 1.22fr;
-      gap:30px;
-      padding:34px 58px 24px;
-      align-items:center;
-    }
-
-    .resort-photo{
-      border-radius:26px;
-      overflow:hidden;
-      border:3px solid rgba(14,47,80,.12);
-      box-shadow:0 12px 28px rgba(14,47,80,.18);
-      background:#d7c9aa;
-    }
-
-    .resort-photo img{
-      display:block;
-      width:100%;
-      aspect-ratio:4/3;
-      object-fit:cover;
-      object-position:center 74%;
-    }
-
-    .lodging{
-      position:relative;
-      padding:8px 0;
-    }
-
-    .pin{
-      font-size:52px;
-      position:absolute;
-      left:-8px;
-      top:0;
-    }
-
-    .lodging h3{
-      margin:0 0 6px 56px;
-      color:var(--navy);
-      font-size:clamp(1.45rem,3vw,2.25rem);
-      text-transform:uppercase;
-      line-height:1.1;
-    }
-
-    .lodging .resort{
-      color:var(--red);
-      font-size:clamp(1.5rem,3vw,2.35rem);
-      font-weight:800;
-      text-transform:uppercase;
-      display:block;
-      margin:6px 0 2px;
-    }
-
-    .rule{
-      height:2px;
-      margin:18px 0;
-      background:linear-gradient(to right, transparent, var(--red) 15%, var(--red) 85%, transparent);
-      position:relative;
-    }
-
-    .rule::after{
-      content:"◆";
-      position:absolute;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-53%);
-      color:var(--red);
-      background:var(--cream);
-      padding:0 8px;
-      font-size:14px;
-    }
-
-    .lodging p{
-      font-family:Arial, Helvetica, sans-serif;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.02em;
-      line-height:1.45;
-      margin:0;
-      font-size:clamp(1rem,2vw,1.3rem);
-    }
-
-    .contact{
-      padding:22px 50px 14px;
-    }
-
-    .contact-bar{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:0;
-      align-items:center;
-      border-top:2px solid rgba(14,47,80,.55);
-      padding-top:18px;
-    }
-
-    .contact-item{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      padding:8px 18px;
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:clamp(1rem,2vw,1.25rem);
-      font-weight:700;
-    }
-
-    .contact-item + .contact-item{
-      border-left:2px solid rgba(14,47,80,.4);
-    }
-
-    .circle{
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:var(--navy);
-      color:var(--cream);
-      font-size:28px;
-      flex:0 0 auto;
-    }
-
-    .contact-item a{
-      color:var(--navy);
-      text-decoration:none;
-    }
-
-    .contact-item a:hover{
-      color:var(--red);
-    }
-
-    .bottom-pattern{
-      height:54px;
-      margin-top:10px;
-      background:
-        linear-gradient(45deg, transparent 42%, var(--cream) 42% 58%, transparent 58%) 0 0/24px 24px,
-        linear-gradient(-45deg, transparent 42%, var(--cream) 42% 58%, transparent 58%) 0 0/24px 24px,
-        var(--navy);
-      border-top:4px solid var(--navy);
-    }
-
-    .small-note{
-      text-align:center;
-      font-family:Arial, Helvetica, sans-serif;
-      font-size:.85rem;
-      padding:8px 18px 16px;
-      color:rgba(14,47,80,.72);
-    }
-
-
-    .schedule-section{
-      padding:48px 46px 54px;
-      background:
-        linear-gradient(rgba(245,234,210,.97),rgba(245,234,210,.97)),
-        url("tande-family-reunion-flyer.png") center/cover;
-      border-top:1px solid rgba(14,47,80,.18);
-    }
-
-    .schedule-heading{
-      text-align:center;
-      max-width:760px;
-      margin:0 auto 30px;
-    }
-
-    .schedule-kicker{
-      color:var(--red);
-      font-family:Arial,Helvetica,sans-serif;
-      font-weight:800;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-size:.9rem;
-    }
-
-    .schedule-heading h2{
-      margin:7px 0 8px;
-      color:var(--navy);
-      font-size:clamp(2.5rem,6vw,4.4rem);
-      line-height:1;
-    }
-
-    .schedule-heading p{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:1.08rem;
-      line-height:1.55;
-    }
-
-    .schedule-grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:24px;
-      align-items:start;
-    }
-
-    .schedule-day{
-      background:rgba(255,250,240,.94);
-      border:2px solid rgba(14,47,80,.16);
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow:0 12px 30px rgba(14,47,80,.12);
-    }
-
-    .schedule-day header{
-      display:flex;
-      align-items:baseline;
-      justify-content:space-between;
-      gap:16px;
-      padding:17px 22px;
-      background:var(--navy);
-      color:var(--cream);
-      border-bottom:5px solid var(--red);
-    }
-
-    .day-name{
-      font-size:1.65rem;
-      font-weight:700;
-    }
-
-    .day-date{
-      color:var(--gold);
-      font-family:Arial,Helvetica,sans-serif;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-    }
-
-    .schedule-event{
-      display:grid;
-      grid-template-columns:42px 1fr;
-      gap:12px;
-      padding:16px 20px;
-      border-bottom:1px solid rgba(14,47,80,.13);
-    }
-
-    .schedule-event:last-child{
-      border-bottom:0;
-    }
-
-    .event-icon{
-      width:38px;
-      height:38px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-      background:var(--paper);
-      font-size:20px;
-    }
-
-    .schedule-event h3{
-      margin:0 0 4px;
-      color:var(--navy);
-      font-family:Arial,Helvetica,sans-serif;
-      font-size:1.02rem;
-    }
-
-    .schedule-event p,
-    .schedule-event ul{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      line-height:1.48;
-    }
-
-    .schedule-event ul{
-      margin-top:6px;
-      padding-left:20px;
-    }
-
-    .schedule-note{
-      margin:28px auto 0;
-      max-width:780px;
-      padding:15px 20px;
-      border-radius:14px;
-      background:var(--red);
-      color:var(--cream);
-      text-align:center;
-      font-family:Arial,Helvetica,sans-serif;
-      font-weight:700;
-      line-height:1.45;
-    }
-
-    @media (max-width:820px){
-      .schedule-section{
-        padding:38px 20px 42px;
-      }
-
-      .schedule-grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-    @media (max-width:820px){
-      .page{
-        border-left-width:0;
-        border-right-width:0;
-      }
-
-      .mountain-hero{
-        min-height:500px;
-        background-position:center 29%;
-      }
-
-      .banner{
-        margin:-12px 18px 0;
-        padding:24px 22px 22px;
-        text-align:center;
-      }
-
-      .tree-mark{
-        position:static;
-        display:block;
-        font-size:72px;
-        margin-bottom:8px;
-      }
-
-      .banner::before,.banner::after{display:none}
-
-      .info{
-        grid-template-columns:1fr;
-        padding:28px 24px 16px;
-      }
-
-      .lodging{
-        text-align:center;
-      }
-
-      .pin{
-        position:static;
-        display:block;
-        margin-bottom:6px;
-      }
-
-      .lodging h3{
-        margin-left:0;
-      }
-
-      .contact{
-        padding:20px 20px 12px;
-      }
-
-      .contact-bar{
-        grid-template-columns:1fr;
-      }
-
-      .contact-item + .contact-item{
-        border-left:0;
-        border-top:1px solid rgba(14,47,80,.25);
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tande Family Reunion 2027 — Park City, Utah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Petit+Formal+Script&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #f3ecda;
+    --cream-2: #ebe1c6;
+    --parchment-line: #d8c9a3;
+    --navy: #1c2b45;
+    --navy-2: #263a5c;
+    --red: #9e2b3e;
+    --red-2: #7d2130;
+    --gold: #c9a961;
+    --gold-soft: #e3cf9a;
+    --ink: #2b241a;
+    --ink-soft: #574d3c;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    font-size:19px;
+    line-height:1.6;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important; transition:none !important;}
+  }
+
+  h1,h2,h3{
+    font-family:'Playfair Display', serif;
+    margin:0;
+    color:var(--navy);
+  }
+
+  a{color:var(--red);}
+
+  .folk-border{
+    height:22px;
+    background-image:
+      repeating-linear-gradient(45deg, var(--navy) 0 6px, transparent 6px 12px),
+      linear-gradient(var(--gold-soft), var(--gold-soft));
+    background-size: 24px 24px, 100% 100%;
+    background-color:var(--navy);
+    position:relative;
+  }
+  .folk-border::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(90deg,
+        transparent 0 4px,
+        var(--gold) 4px 6px,
+        transparent 6px 20px);
+  }
+
+  /* NAV */
+  nav{
+    background:var(--cream);
+    border-bottom:1px solid var(--parchment-line);
+    position:sticky; top:0; z-index:50;
+  }
+  .nav-wrap{
+    max-width:1100px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+    flex-wrap:wrap;
+    gap:10px 24px;
+  }
+  .brand{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:var(--navy);
+    font-size:1.05rem;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .brand span{color:var(--red);}
+  .nav-links{
+    display:flex; gap:22px; flex-wrap:wrap;
+    list-style:none; margin:0; padding:0;
+  }
+  .nav-links a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    font-size:0.92rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+  }
+  .nav-links a:hover{ color:var(--red); border-bottom-color:var(--red); }
+
+  /* HERO — full flyer as the landing area */
+  .hero{
+    background:var(--navy);
+    display:flex;
+    justify-content:center;
+  }
+  .flyer-img{
+    display:block;
+    width:100%;
+    max-width:720px;
+    height:auto;
+  }
+
+  /* GENERIC SECTION */
+  section{
+    max-width:1000px;
+    margin:0 auto;
+    padding:90px 24px 20px;
+  }
+  section.alt{
+    max-width:none;
+    background:var(--cream-2);
+  }
+  section.alt > .inner{
+    max-width:1000px;
+    margin:0 auto;
+  }
+  section.navy{
+    max-width:none;
+    background:var(--navy);
+    color:var(--cream);
+  }
+  section.navy > .inner{
+    max-width:1000px; margin:0 auto;
+  }
+  section.navy h2{color:var(--cream);}
+  section.navy .section-label{color:var(--gold-soft);}
+
+  .section-label{
+    text-transform:uppercase;
+    letter-spacing:0.3em;
+    font-size:0.78rem;
+    color:var(--red);
+    margin-bottom:10px;
+    display:block;
+  }
+  section h2{
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom:8px;
+  }
+  .section-sub{
+    color:var(--ink-soft);
+    max-width:640px;
+    margin-top:10px;
+    font-size:1.08rem;
+  }
+  section.navy .section-sub{color:#c7d0de;}
+
+  .divider{
+    display:flex; align-items:center; gap:14px;
+    margin:34px 0;
+    color:var(--gold);
+  }
+  .divider::before, .divider::after{
+    content:""; height:1px; flex:1;
+    background:var(--parchment-line);
+  }
+  section.navy .divider::before, section.navy .divider::after{ background:#3a4d6e; }
+
+  /* EVENT DETAILS CARDS */
+  .info-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:22px;
+    margin-top:36px;
+  }
+  .info-card{
+    background:var(--cream);
+    border:1px solid var(--parchment-line);
+    border-top:3px solid var(--red);
+    padding:26px 22px;
+    border-radius:4px;
+  }
+  .info-card h3{
+    font-size:1.15rem;
+    margin-bottom:8px;
+  }
+  .info-card p{margin:0; color:var(--ink-soft);}
+  .info-card .icon{margin-bottom:12px;}
+
+  /* SCHEDULE TABS */
+  .day-tabs{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:30px;
+  }
+  .day-tab{
+    background:transparent;
+    border:1px solid #3a4d6e;
+    color:#c7d0de;
+    padding:10px 20px;
+    font-family:'EB Garamond', serif;
+    font-size:1rem;
+    letter-spacing:0.03em;
+    border-radius:30px;
+    cursor:pointer;
+  }
+  .day-tab.active{
+    background:var(--red);
+    border-color:var(--red);
+    color:var(--cream);
+  }
+  .day-panel{display:none; margin-top:34px;}
+  .day-panel.active{display:block;}
+  .timeline{list-style:none; margin:0; padding:0;}
+  .timeline li{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:20px;
+    padding:16px 0;
+    border-bottom:1px solid #33456a;
+  }
+  .timeline li:last-child{border-bottom:none;}
+  .timeline time{color:var(--gold-soft); font-weight:600; font-size:0.95rem;}
+  .timeline .ev-title{font-family:'Playfair Display', serif; font-size:1.08rem; color:var(--cream); margin-bottom:3px;}
+  .timeline .ev-note{color:#aebad0; font-size:0.95rem;}
+  .placeholder-tag{
+    display:inline-block;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--navy);
+    background:var(--gold-soft);
+    padding:2px 8px;
+    border-radius:20px;
+    margin-left:8px;
+    vertical-align:middle;
+  }
+
+  /* LODGING */
+  .lodge-wrap{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:36px;
+    margin-top:34px;
+    align-items:start;
+  }
+  .lodge-card{
+    background:var(--cream);
+    border:1px solid var(--parchment-line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .lodge-photo{
+    height:180px;
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 60%, var(--gold) 160%);
+    position:relative;
+  }
+  .lodge-body{padding:22px;}
+  .lodge-body h3{font-size:1.2rem; margin-bottom:6px;}
+  .lodge-body p{margin:0 0 6px; color:var(--ink-soft);}
+  .travel-list{list-style:none; margin:0; padding:0;}
+  .travel-list li{
+    padding:14px 0;
+    border-bottom:1px solid var(--parchment-line);
+  }
+  .travel-list li:last-child{border-bottom:none;}
+  .travel-list .t-label{
+    font-family:'Playfair Display', serif;
+    font-size:1.02rem;
+    color:var(--navy);
+    display:block;
+    margin-bottom:3px;
+  }
+  .travel-list .t-note{color:var(--ink-soft); font-size:0.98rem;}
+
+  /* HISTORY */
+  .history-wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:44px;
+    align-items:center;
+    margin-top:34px;
+  }
+  .history-copy p{color:var(--ink-soft); margin:0 0 16px;}
+  .history-copy p:last-child{margin-bottom:0;}
+  .tree-wrap{display:flex; justify-content:center;}
+
+  /* GALLERY */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    margin-top:34px;
+  }
+  .gallery-slot{
+    aspect-ratio:4/3;
+    background:var(--cream);
+    border:1.5px dashed var(--parchment-line);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    color:var(--ink-soft);
+    font-size:0.9rem;
+    text-align:center;
+    padding:12px;
+  }
+  .gallery-slot svg{opacity:0.55;}
+
+  /* CONTACT */
+  .contact-band{
+    background:var(--navy);
+    border-radius:8px;
+    padding:40px 36px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    align-items:center;
+    justify-content:space-between;
+    color:var(--cream);
+    margin-top:10px;
+  }
+  .contact-band h3{color:var(--cream); font-size:1.3rem; margin-bottom:4px;}
+  .contact-band .sub{color:#c7d0de; margin:0;}
+  .contact-links{display:flex; gap:26px; flex-wrap:wrap;}
+  .contact-link{
+    display:flex; align-items:center; gap:10px;
+    color:var(--cream);
+    text-decoration:none;
+    font-size:1.02rem;
+  }
+  .contact-link .badge{
+    width:38px; height:38px;
+    border-radius:50%;
+    background:var(--red);
+    display:flex; align-items:center; justify-content:center;
+    flex:0 0 auto;
+  }
+  .contact-link span.txt{border-bottom:1px solid transparent;}
+  .contact-link:hover span.txt{border-bottom-color:var(--gold-soft);}
+
+  footer{
+    text-align:center;
+    padding:34px 24px 26px;
+    color:var(--ink-soft);
+    font-size:0.9rem;
+    background:var(--cream-2);
+  }
+  footer .fam{
+    font-family:'Petit Formal Script', cursive;
+    color:var(--red);
+    font-size:1.3rem;
+    display:block;
+    margin-bottom:6px;
+  }
+
+  @media (max-width: 820px){
+    .info-grid{grid-template-columns:1fr;}
+    .lodge-wrap{grid-template-columns:1fr;}
+    .history-wrap{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .ribbon{flex-direction:column; text-align:center;}
+    .timeline li{grid-template-columns:80px 1fr;}
+    .nav-links{justify-content:center; width:100%;}
+  }
+  @media (max-width: 480px){
+    .gallery-grid{grid-template-columns:1fr;}
+  }
+
+  :focus-visible{
+    outline:3px solid var(--red);
+    outline-offset:2px;
+  }
+</style>
 </head>
-
 <body>
-  <main class="page">
-    <div class="top-ornament">
-      <div class="flag" aria-hidden="true">🇳🇴</div>
+
+<div class="folk-border"></div>
+
+<nav>
+  <div class="nav-wrap">
+    <a class="brand" href="#top">TANDE <span>Family Reunion</span></a>
+    <ul class="nav-links">
+      <li><a href="#event">Event</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#lodging">Lodging</a></li>
+      <li><a href="#history">Our Family</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="flyer-img" src="flyer-full.png" alt="Tande Family Reunion 2027 flyer — July 22–25, 2027 in Park City, Utah, staying at Westgate Resort, contact Ivan Nelson at ivanlnelson@gmail.com or 801-837-7102">
+</header>
+
+<section id="event">
+  <span class="section-label">The Gathering</span>
+  <h2>Event Details</h2>
+  <p class="section-sub">Four days in the mountains of Park City, honoring the Tande heritage and making new memories together.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="icon">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="4" y="6" width="22" height="20" rx="2" stroke="#9e2b3e" stroke-width="2"/><path d="M4 12H26" stroke="#9e2b3e" stroke-width="2"/><path d="M9 3V8M21 3V8" stroke="#9e2b3e" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3>When</h3>
+      <p>July 22–25, 2027<br>Thursday through Sunday</p>
     </div>
-
-    <header class="masthead">
-      <h1>Tande</h1>
-      <div class="script">Family Reunion</div>
-      <div class="year">2027</div>
-    </header>
-
-    <section class="mountain-hero" aria-label="Park City mountain setting">
-      <div class="date-block">
-        <div class="date">JULY 22–25, 2027</div>
-        <div class="place">Park City, Utah</div>
+    <div class="info-card">
+      <div class="icon">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 27C15 27 24 18.5 24 12A9 9 0 0 0 6 12C6 18.5 15 27 15 27Z" stroke="#9e2b3e" stroke-width="2"/><circle cx="15" cy="12" r="3.2" stroke="#9e2b3e" stroke-width="2"/></svg>
       </div>
-    </section>
-
-    <section class="banner">
-      <div class="tree-mark" aria-hidden="true">🌳</div>
-      <h2>Tande Family Reunion</h2>
-      <p>
-        where we celebrate our ancestors,<br>
-        heritage, and the ties that bind us.
-      </p>
-      <p class="gold">You are a part of this Family Tree!</p>
-    </section>
-
-    <section class="info">
-      <div class="resort-photo">
-        <img src="tande-family-reunion-flyer.png" alt="Westgate Resort and Park City mountain setting">
+      <h3>Where</h3>
+      <p>Park City, Utah<br>In the mountains near the ski resort</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 26C15 26 4 20 4 12C4 6 15 6 15 12C15 6 26 6 26 12C26 20 15 26 15 26Z" stroke="#9e2b3e" stroke-width="2"/></svg>
       </div>
-
-      <div class="lodging">
-        <div class="pin" aria-hidden="true">📍</div>
-        <h3>
-          We will be staying at
-          <span class="resort">Westgate Resort</span>
-          in Park City
-        </h3>
-
-        <div class="rule"></div>
-
-        <p>
-          Join us in the beautiful mountains of Park City, Utah,
-          as we honor our heritage and create lasting memories.
-        </p>
-      </div>
-    </section>
-
-    
-<section id="schedule" class="schedule-section">
-  <div class="schedule-heading">
-    <div class="schedule-kicker">July 22–25, 2027</div>
-    <h2>Reunion Schedule</h2>
-    <p>Four days of family, heritage, mountain adventures, and time together.</p>
+      <h3>Who</h3>
+      <p>All Tande family — near and far. You are part of this family tree.</p>
+    </div>
   </div>
-
-  <div class="schedule-grid">
-    <article class="schedule-day">
-      <header>
-        <span class="day-name">Thursday</span>
-        <span class="day-date">July 22</span>
-      </header>
-      <div class="schedule-event">
-        <span class="event-icon">👋</span>
-        <div>
-          <h3>Welcome Gathering</h3>
-          <p>Arrive, get settled, reconnect with family, and enjoy dinner together.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="schedule-day">
-      <header>
-        <span class="day-name">Friday</span>
-        <span class="day-date">July 23</span>
-      </header>
-
-      <div class="schedule-event">
-        <span class="event-icon">🥞</span>
-        <div>
-          <h3>Breakfast</h3>
-          <p>Bear Conference Room.</p>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🏆</span>
-        <div>
-          <h3>Family Challenge Activity</h3>
-          <p>A fun family activity following breakfast.</p>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🚡</span>
-        <div>
-          <h3>Gondola Ride & Lunch</h3>
-          <p>Ride the gondola to Red Pine Lodge for lunch.</p>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🏔️</span>
-        <div>
-          <h3>Afternoon Free Time</h3>
-          <p>Choose your own Park City adventure:</p>
-          <ul>
-            <li>Mountain trail hike</li>
-            <li>Mountain bike ride</li>
-            <li>Horseback riding</li>
-            <li>Shopping in Park City</li>
-            <li>Pool time</li>
-            <li>Private plane scenic flight</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🤠</span>
-        <div>
-          <h3>Western Barn Dance & Dutch Oven Dinner</h3>
-          <p>Friday evening family dinner and western dance.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="schedule-day">
-      <header>
-        <span class="day-name">Saturday</span>
-        <span class="day-date">July 24</span>
-      </header>
-
-      <div class="schedule-event">
-        <span class="event-icon">☀️</span>
-        <div>
-          <h3>Breakfast</h3>
-          <p>Breakfast together on the outdoor patio.</p>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🥇</span>
-        <div>
-          <h3>Olympic Museum</h3>
-          <p>Visit the museum, with optional Olympic venue rides.</p>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🍴</span>
-        <div>
-          <h3>Lunch & Free Activity Time</h3>
-          <p>Lunch on your own followed by free activity time.</p>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🎭</span>
-        <div>
-          <h3>Dinner & Talent Show</h3>
-          <p>Evening dinner and family talent show in the Bear Room at the resort.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="schedule-day">
-      <header>
-        <span class="day-name">Sunday</span>
-        <span class="day-date">July 25</span>
-      </header>
-
-      <div class="schedule-event">
-        <span class="event-icon">🥐</span>
-        <div>
-          <h3>Breakfast</h3>
-          <p>Breakfast in the Bear Room.</p>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🚌</span>
-        <div>
-          <h3>Travel to Salt Lake City</h3>
-          <p>Shuttle or drive from Park City to Salt Lake City.</p>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🎼</span>
-        <div>
-          <h3>Music & the Spoken Word</h3>
-          <p>Attend the Sunday service featuring the Tabernacle Choir and Orchestra at Temple Square.</p>
-        </div>
-      </div>
-
-      <div class="schedule-event">
-        <span class="event-icon">🏡</span>
-        <div>
-          <h3>Lunch & Closing Gathering</h3>
-          <p>Final reunion gathering at Ivan & Kathy's home near Salt Lake City.</p>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <p class="schedule-note">
-    Final activity times, transportation details, and meeting locations will be shared as the reunion approaches.
-  </p>
 </section>
 
-<section class="contact">
-      <div class="contact-bar">
-        <div class="contact-item">
-          <div class="circle" aria-hidden="true">✉</div>
-          <div>
-            CONTACT IVAN NELSON<br>
-            <a href="mailto:ivanlnelson@gmail.com">ivanlnelson@gmail.com</a>
-          </div>
-        </div>
+<section class="navy" id="schedule">
+  <div class="inner">
+    <span class="section-label">Four Days Together</span>
+    <h2>Schedule of Activities</h2>
+    <p class="section-sub">A rough outline for the weekend — exact times and activities are still being finalized.</p>
 
-        <div class="contact-item">
-          <div class="circle" aria-hidden="true">☎</div>
-          <a href="tel:+18018377102">801-837-7102</a>
-        </div>
+    <div class="day-tabs" role="tablist" aria-label="Reunion days">
+      <button class="day-tab active" data-day="1">Thu, Jul 22</button>
+      <button class="day-tab" data-day="2">Fri, Jul 23</button>
+      <button class="day-tab" data-day="3">Sat, Jul 24</button>
+      <button class="day-tab" data-day="4">Sun, Jul 25</button>
+    </div>
+
+    <div class="day-panel active" data-panel="1">
+      <ul class="timeline">
+        <li><time>Afternoon</time><div><div class="ev-title">Check-in & Arrivals<span class="placeholder-tag">TBD</span></div><div class="ev-note">Settle in at Westgate Resort as everyone arrives.</div></div></li>
+        <li><time>Evening</time><div><div class="ev-title">Welcome Gathering<span class="placeholder-tag">TBD</span></div><div class="ev-note">Casual meet-and-greet — details coming soon.</div></div></li>
+      </ul>
+    </div>
+    <div class="day-panel" data-panel="2">
+      <ul class="timeline">
+        <li><time>Morning</time><div><div class="ev-title">Family Activity<span class="placeholder-tag">TBD</span></div><div class="ev-note">Outdoor activity in the mountains — details coming soon.</div></div></li>
+        <li><time>Afternoon</time><div><div class="ev-title">Free Time</div><div class="ev-note">Explore Park City on your own or with family.</div></div></li>
+        <li><time>Evening</time><div><div class="ev-title">Group Dinner<span class="placeholder-tag">TBD</span></div><div class="ev-note">Location and menu to be announced.</div></div></li>
+      </ul>
+    </div>
+    <div class="day-panel" data-panel="3">
+      <ul class="timeline">
+        <li><time>Morning</time><div><div class="ev-title">Family History Session<span class="placeholder-tag">TBD</span></div><div class="ev-note">Sharing stories and photos of the Tande ancestors.</div></div></li>
+        <li><time>Afternoon</time><div><div class="ev-title">Games & Activities<span class="placeholder-tag">TBD</span></div><div class="ev-note">Details coming soon.</div></div></li>
+        <li><time>Evening</time><div><div class="ev-title">Reunion Banquet<span class="placeholder-tag">TBD</span></div><div class="ev-note">A formal evening together — details coming soon.</div></div></li>
+      </ul>
+    </div>
+    <div class="day-panel" data-panel="4">
+      <ul class="timeline">
+        <li><time>Morning</time><div><div class="ev-title">Farewell Brunch<span class="placeholder-tag">TBD</span></div><div class="ev-note">One last meal together before departures.</div></div></li>
+        <li><time>Midday</time><div><div class="ev-title">Departures</div><div class="ev-note">Safe travels home — until next time!</div></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="lodging">
+  <span class="section-label">Stay & Travel</span>
+  <h2>Lodging & Travel</h2>
+  <p class="section-sub">Here's where we'll be staying, plus a few notes to help you plan your trip.</p>
+
+  <div class="lodge-wrap">
+    <div class="lodge-card">
+      <div class="lodge-photo"></div>
+      <div class="lodge-body">
+        <h3>Westgate Resort</h3>
+        <p>Park City, Utah</p>
+        <p>Our home base for the reunion weekend. Booking details and group rate information coming soon.</p>
       </div>
-    </section>
+    </div>
+    <ul class="travel-list">
+      <li>
+        <span class="t-label">Nearest Airport</span>
+        <span class="t-note">Salt Lake City International Airport (SLC), about 35 minutes from Park City.</span>
+      </li>
+      <li>
+        <span class="t-label">Getting Around</span>
+        <span class="t-note">A rental car is recommended. Shuttle information will be posted here as it's confirmed.</span>
+      </li>
+      <li>
+        <span class="t-label">What to Pack</span>
+        <span class="t-note">Mountain weather in July — layers, comfortable shoes, and sun protection.</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <div class="bottom-pattern" aria-hidden="true"></div>
-    <div class="small-note">Tande Family Reunion 2027 · Park City, Utah</div>
-  </main>
+<section class="alt" id="history">
+  <div class="inner">
+    <span class="section-label">Our Roots</span>
+    <h2>The Tande Family</h2>
+    <div class="history-wrap">
+      <div class="tree-wrap">
+        <svg width="220" height="260" viewBox="0 0 220 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M110 250V150" stroke="#c9a961" stroke-width="4"/>
+          <path d="M110 190C110 190 70 175 65 130C60 95 90 80 100 100C98 70 130 60 138 88C155 78 175 100 160 122C185 128 178 155 155 155C155 155 130 158 110 150" stroke="#c9a961" stroke-width="3" fill="none"/>
+          <circle cx="70" cy="118" r="15" fill="#f3ecda" stroke="#c9a961" stroke-width="2.5"/>
+          <circle cx="112" cy="92" r="15" fill="#f3ecda" stroke="#c9a961" stroke-width="2.5"/>
+          <circle cx="152" cy="112" r="15" fill="#f3ecda" stroke="#c9a961" stroke-width="2.5"/>
+          <path d="M110 250C110 250 70 254 60 260M110 250C110 250 150 254 160 260M110 250V260" stroke="#c9a961" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="history-copy">
+        <p>Placeholder — this is where the Tande family story goes: where the family came from, how the name traveled to Utah, and the generations who've carried it forward.</p>
+        <p>Send along the details you'd like included — names, dates, photos, or a favorite story — and this section will be updated with your family's real history.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <span class="section-label">Memories</span>
+  <h2>Family Gallery</h2>
+  <p class="section-sub">Photos from past gatherings and previews of this year's reunion will go here.</p>
+
+  <div class="gallery-grid">
+    <div class="gallery-slot">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="3" y="6" width="28" height="22" rx="2" stroke="#9e2b3e" stroke-width="2"/><circle cx="11" cy="14" r="3" stroke="#9e2b3e" stroke-width="2"/><path d="M3 24L12 17L18 22L24 15L31 22" stroke="#9e2b3e" stroke-width="2"/></svg>
+      Photo coming soon
+    </div>
+    <div class="gallery-slot">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="3" y="6" width="28" height="22" rx="2" stroke="#9e2b3e" stroke-width="2"/><circle cx="11" cy="14" r="3" stroke="#9e2b3e" stroke-width="2"/><path d="M3 24L12 17L18 22L24 15L31 22" stroke="#9e2b3e" stroke-width="2"/></svg>
+      Photo coming soon
+    </div>
+    <div class="gallery-slot">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="3" y="6" width="28" height="22" rx="2" stroke="#9e2b3e" stroke-width="2"/><circle cx="11" cy="14" r="3" stroke="#9e2b3e" stroke-width="2"/><path d="M3 24L12 17L18 22L24 15L31 22" stroke="#9e2b3e" stroke-width="2"/></svg>
+      Photo coming soon
+    </div>
+    <div class="gallery-slot">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="3" y="6" width="28" height="22" rx="2" stroke="#9e2b3e" stroke-width="2"/><circle cx="11" cy="14" r="3" stroke="#9e2b3e" stroke-width="2"/><path d="M3 24L12 17L18 22L24 15L31 22" stroke="#9e2b3e" stroke-width="2"/></svg>
+      Photo coming soon
+    </div>
+    <div class="gallery-slot">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="3" y="6" width="28" height="22" rx="2" stroke="#9e2b3e" stroke-width="2"/><circle cx="11" cy="14" r="3" stroke="#9e2b3e" stroke-width="2"/><path d="M3 24L12 17L18 22L24 15L31 22" stroke="#9e2b3e" stroke-width="2"/></svg>
+      Photo coming soon
+    </div>
+    <div class="gallery-slot">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="3" y="6" width="28" height="22" rx="2" stroke="#9e2b3e" stroke-width="2"/><circle cx="11" cy="14" r="3" stroke="#9e2b3e" stroke-width="2"/><path d="M3 24L12 17L18 22L24 15L31 22" stroke="#9e2b3e" stroke-width="2"/></svg>
+      Photo coming soon
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-band">
+    <div>
+      <h3>Questions about the reunion?</h3>
+      <p class="sub">Reach out to Ivan Nelson, reunion organizer.</p>
+    </div>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:ivanlnelson@gmail.com">
+        <span class="badge">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1.5" stroke="#f3ecda" stroke-width="1.6"/><path d="M2.5 5L9 10L15.5 5" stroke="#f3ecda" stroke-width="1.6"/></svg>
+        </span>
+        <span class="txt">ivanlnelson@gmail.com</span>
+      </a>
+      <a class="contact-link" href="tel:8018377102">
+        <span class="badge">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 3C4 3 6 3 6.5 5C7 7 5.5 7 5.5 8.5C5.5 10.5 8 13 10 13.5C11.5 13.5 11.5 12 13.5 12.5C15.5 13 15.5 15 15.5 15C15.5 16 14.5 16.5 13.5 16.5C8 16.5 2 10.5 2 5C2 4 2.5 3 4 3Z" stroke="#f3ecda" stroke-width="1.5"/></svg>
+        </span>
+        <span class="txt">801-837-7102</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fam">The Tande Family</span>
+  Park City, Utah &nbsp;·&nbsp; July 22–25, 2027
+</footer>
+
+<div class="folk-border"></div>
+
+<script>
+  const tabs = document.querySelectorAll('.day-tab');
+  const panels = document.querySelectorAll('.day-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector('.day-panel[data-panel="' + tab.dataset.day + '"]').classList.add('active');
+    });
+  });
+</script>
+
 </body>
 </html>
